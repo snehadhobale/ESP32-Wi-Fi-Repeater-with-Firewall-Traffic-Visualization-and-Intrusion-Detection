@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>ESP32 Firewall Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script defer src="/script.js"></script>
+  <script defer src="/chart.min.js"></script>
+</head>
+<body>
+  <header>
+    <h2>ESP32 Firewall Dashboard</h2>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <section>
+    <h3>Live MAC Table (Connected Clients)</h3>
+    <table id="macTable">
+      <thead><tr><th>#</th><th>MAC Address</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h3>Traffic (Last Minute)</h3>
+    <canvas id="trafficChart" width="400" height="160"></canvas>
+  </section>
+
+  <section>
+    <h3>Firewall</h3>
+    <form id="blockForm">
+      <input name="ip" placeholder="Block IP (string match)" required />
+      <button type="submit">Block</button>
+    </form>
+    <form id="unblockForm" style="margin-top:8px;">
+      <input name="ip" placeholder="Unblock IP" required />
+      <button type="submit">Unblock</button>
+    </form>
+    <pre id="rulesBox"></pre>
+  </section>
+</body>
+</html>
